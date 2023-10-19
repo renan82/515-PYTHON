@@ -1,0 +1,155 @@
+01) FAÇA UMA FUNÇÃO QUE RECEBA DOIS NÚMEROS E RETORNE A SOMA
+DESSES DOIS NÚMEROS
+
+RESOLUÇÃO: 
+def somar(num1, num2):
+    return num1 + num2
+
+numero1 = float(input("Digite o primeiro número: "))
+numero2 = float(input("Digite o segundo número: "))
+
+print(somar(numero1, numero2))
+
+02) FAÇA UMA FUNÇÃO LAMBDA QUE RECEBA UM NÚMERO E RETONE ELE ELEVADO AO QUADRADO
+
+RESOLUÇÃO:
+quadrado = lambda numero : numero ** 2
+
+numero = float(input("Digite um número: "))
+
+print(quadrado(numero))
+
+03) FAÇA UMA FUNÇÃO QUE RECEBE UMA LISTA DE NÚMEROS E RETORNE QUAL É O MAIOR ENTRE ELES
+
+RESOLUÇÃO:
+def maior(lista):
+    return max(lista)
+
+
+lista = []
+for i in range(5):
+    numero = float(input("Digite um número: "))
+    lista.append(numero)
+
+print(maior(lista))
+
+
+
+04) FAÇA UMA FUNÇÃO LAMBDA PARA MULTIPLICAR TODOS OS NÚMEROS DE UMA LISTA POR 2
+
+RESOLUÇÃO:
+lista = []
+for i in range(10):
+    numero = float(input("Digite um número: "))
+    lista.append(numero)
+
+multiplicados = list(map(lambda numero : numero * 2, lista))
+
+print(multiplicados)
+
+05) FAÇA UMA FUNÇÃO LAMBDA QUE RECEBE UM NÚMERO E VERIFICA SE O NÚMERO É PAR
+
+RESOLUÇÃO:
+par_ou_impar = lambda numero : "é par" if numero % 2 == 0 else "é ímpar"
+
+numero = int(input("Digite um número: "))
+
+print(par_ou_impar(numero))
+
+
+
+06) FAÇA UMA FUNÇÃO QUE RECEBA UMA LISTA DE NÚMERO E RETORNE A MÉDIA DOS NÚMEROS DESSA LISTA
+
+RESOLUÇÃO:
+def media (lista):
+    return sum(lista) / len(lista)
+
+# def media (lista):
+#     soma = 0
+#     for numero in lista:
+#         soma = soma + numero
+#     media = soma / len(lista)
+#     return media
+
+
+quantidade = int(input("Digite a quantidade de números que você vai inserir na lista: "))
+
+lista = []
+for i in range(quantidade):
+    numero = float(input("Digite um número: "))
+    lista.append(numero)
+
+print(media(lista))
+
+
+07) FAÇA UMA FUNÇÃO QUE RECEBE UM TEXTO E RETORNE A QUANTIDADE DE VOGAIS QUE AQUELE TEXTO CONTÉM
+
+RESOLUÇÃO:
+def qtde_vogais (texto):
+    contador = 0
+    for letra in texto:
+        if letra.lower() in "aeiou":
+            contador += 1
+    return contador
+
+texto = str(input("Digite um texto qualquer: "))
+
+print(f"Seu texto possui {qtde_vogais(texto)} vogais")
+
+
+08) FAÇA UMA FUNÇÃO QUE RECEBA UM TEXTO E RETORNA Q QUANTIDADE DE CONSOANTES QUE AQUELE TEXTO CONTÉM
+
+RESOLUÇÃO:
+def qtde_vogais (texto):
+    contador = 0
+    for letra in texto:
+        if letra.lower() in "bcdfghjklmnpqrstvxywz":
+            contador += 1
+    return contador
+
+texto = str(input("Digite um texto qualquer: "))
+
+print(f"Seu texto possui {qtde_vogais(texto)} consoantes")
+
+
+09) FAÇA UMA FUNÇÃO QUE RECEBE UM NÚMERO E RETORNA O SEU VALOR FATORIAL
+
+10) FAÇA UMA FUNÇÃO QUE RECEBE UMA SENHA E INFORMA SE ELA É UMA SENHA FORTE
+REGRAS:
+MAIS DE 8 DIGITOS
+CONTENHA LETRAS
+CONTENHA NÚMEROS
+
+
+
+caracter.py
+def contar_vogais(texto):
+    contador = 0
+    for letra in texto:
+        if letra.lower() in "aeiou":
+            contador += 1
+    return contador
+
+def contar_consoantes(texto):
+    contador = 0
+    for letra in texto:
+        if letra.lower() in "bcdfghjklmnpqrstvxywz":
+            contador += 1
+    return contador
+
+def tamanho_da_palavra(texto):
+    return len(texto)
+
+def transformar_em_maiusculo(texto):
+    return texto.upper()
+
+def transformar_em_minusculo(texto):
+    return texto.lower()
+
+
+
+main.py
+import caracter
+
+texto = str(input("Digite um texto qualquer: "))
+print(f"O texto '{texto}' possui {caracter.contar_vogais(texto)} vogais")
